@@ -60,8 +60,8 @@ def delete_event(event_id):
     # TODO: Task 3 - Implement the Loop and Process Each Element
     for i, event in enumerate(events):
                 if event.id == event_id:
-                    deleted_event = events.pop(i)   
-                    return jsonify({"title": deleted_event.title}), 200
+                    events.pop(i)   
+                    return '', 204
     # TODO: Task 4 - Return and Handle Results
     return "Event not found",  404
 
