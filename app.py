@@ -34,7 +34,7 @@ def create_event():
     new_event = Event(new_id, data["title"])
     events.append(new_event)
     # TODO: Task 4 - Return and Handle Results
-    return jsonify(new_event.to_dict()), 201
+    return jsonify({"title": new_event.title}), 201
 
 # TODO: Task 1 - Define the Problem
 # Update the title of an existing event
@@ -47,7 +47,7 @@ def update_event(event_id):
         if event.id == event_id:
             if "title" in data:
                 event.title = data["title"]
-                return jsonify(event.to_dict()), 200
+                return jsonify({"title": event.title}), 200
     # TODO: Task 4 - Return and Handle Results
     return "Event not found",  404
 
@@ -61,7 +61,7 @@ def delete_event(event_id):
     for i, event in enumerate(events):
                 if event.id == event_id:
                     deleted_event = events.pop(i)   
-                    return jsonify(deleted_event.to_dict()), 200
+                    return jsonify({"title": deleted_event.title}), 200
     # TODO: Task 4 - Return and Handle Results
     return "Event not found",  404
 
