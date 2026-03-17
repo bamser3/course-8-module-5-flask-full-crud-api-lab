@@ -103,7 +103,11 @@ events = [
     Event(2, "Python Workshop")
 ]
 
+
 # TODO: POST /events - Create a new event from JSON input
+@app.route("/events", methods = ["POST"])
+def post_event():
+  
 # TODO: PATCH /events/<id> - Update the title of an event
 # TODO: DELETE /events/<id> - Remove an event from the list
 
